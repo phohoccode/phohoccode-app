@@ -150,6 +150,16 @@ const projects_data = [
     },
     
 ]
-
-
 export default projects_data
+
+export const sayings_data = [
+    'Kiến thức là thứ trường tồn vĩnh viễn và khẳng định được giá trị của con người.',
+    'Những điều làm bạn sợ hãi đó chính là thứ phải học hỏi.',
+    'Những thứ ta biết chỉ là một hạt cát trên sa mạc, trong khi đó kiến thức như đại dương mênh mông.',
+    'Những người chiến thắng không chỉ nhờ vào sự may mắn, nỗ lực mà còn là sự hiểu biết.',
+    'Thay vì suy nghĩ viển vông, hãy dành toàn tâm toàn sức để trau dồi kiến thức thì sẽ nhanh đạt được điều mình muốn hơn.',
+    'Khi thất bại, hãy nhớ rằng đó là một lời nhắc nhở rằng hãy cố gắng trau dồi và học tập nhiều hơn nữa.',
+    'Học càng nhiều, con đường đi đến thành công càng ngắn.',
+    'Mục đích của việc học không chỉ đáp ứng nhu cầu hiện tại mà còn khẳng định giá trị của bản thân.',
+    'Học, học nữa, học mãi.'
+]

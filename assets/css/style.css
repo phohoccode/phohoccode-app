@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #8338ec;
 }
 
 *::-webkit-scrollbar {
@@ -15,7 +23,8 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
 }
 
 html {
@@ -27,13 +36,13 @@ body {
 }
 
 section {
-  margin: 80px 0;
+  margin: 80px 32px;
   opacity: 0;
   animation: fadeIn 1000ms ease-in-out forwards;
 }
 
 section:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 a {
@@ -50,7 +59,6 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 32px;
   color: #fff;
   z-index: 2;
   background: #000;
@@ -119,10 +127,6 @@ a {
   position: relative;
 }
 
-.main-container nav ul a.active {
-  width: 100%;
-}
-
 .main-container nav ul li.active a::after {
   width: 100%;
 }
@@ -134,7 +138,7 @@ a {
   bottom: -4px;
   width: 0%;
   height: 1px;
-  background: #fff;
+  background-color: #fff;
   transition: all 400ms ease;
 }
 
@@ -150,7 +154,7 @@ a {
 }
 
 .main-container .hero-section > span {
-  font-size: 24px;
+  font-size: 32px;
   transform: translateY(15px);
   opacity: 0;
   text-transform: uppercase;
@@ -169,15 +173,12 @@ a {
   color: #ef233c;
   position: relative;
   margin-left: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-/* 
-.main-container .hero-section h1 span::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    height: 100%;
-    background-color: #ef233c;
-} */
 
 @keyframes fadeIn {
   to {
@@ -190,7 +191,6 @@ a {
   font-size: 24px;
   transform: translateY(15px);
   opacity: 0;
-
   animation: fadeIn 1000ms ease-in-out forwards;
   animation-delay: 400ms;
 }
@@ -232,6 +232,7 @@ a {
   flex-wrap: wrap;
   gap: 24px;
   flex-direction: column;
+  border-radius: 16px;
 }
 
 #contact form .form-input {
@@ -284,17 +285,18 @@ textarea {
 .submit button {
   border: unset;
   border-color: transparent;
-  width: 200px;
+  width: 160px;
   height: 40px;
   cursor: pointer;
   transition: 0.3s;
-  background-color: #ef233c;
+  background-color: var(--primary-color);
   font-size: 16px;
   color: #fff;
+  border-radius: 16px;
 }
 
 .submit button:hover {
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-color: #fff;
   background-color: transparent;
 }
@@ -306,25 +308,26 @@ textarea {
 }
 
 .project {
-    width: calc(25% - 18px);
-    overflow: hidden;
+  border-radius: 16px;
+  width: calc(25% - 18px);
+  overflow: hidden;
 }
 
 .project-background {
-    position: relative;
+  position: relative;
 }
 
 .project-background:hover figure {
-    opacity: 0.3;
+  opacity: 0.3;
 }
 
 .project-background:hover .see-now {
-    opacity: 1;
-    top: 50%;
+  opacity: 1;
+  top: 50%;
 }
 
 .project-background figure {
-    height: 200px;
+  height: 200px;
   transition: 0.3s;
 }
 
@@ -336,13 +339,14 @@ textarea {
 }
 
 .see-now {
+  border-radius: 16px;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #d62828;
+  background-color: var(--primary-color);
   color: #fff;
-  padding: 12px 16px;
+  padding: 8px 16px;
   font-size: 16px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
@@ -361,8 +365,9 @@ textarea {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   margin-top: 100px;
+  padding: 32px;
 }
 
 .images {
@@ -378,6 +383,7 @@ textarea {
   width: calc(25% - 18px);
   flex-shrink: 0;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .image img {
@@ -404,11 +410,8 @@ textarea {
 }
 
 .title {
-
   font-size: 24px;
   padding: 12px 0;
-  margin-bottom: 24px;
-  border-bottom: 2px solid #fff;
 }
 
 .view-soucre {
@@ -416,10 +419,11 @@ textarea {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  background-color: #ef233c;
+  background-color: var(--primary-color);
   color: #fff;
-  padding: 12px 16px;
-  width: 200px;
+  padding: 8px 16px;
+  width: 240px;
+  border-radius: 16px;
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
@@ -438,9 +442,10 @@ textarea {
   border: 1px solid transparent;
   color: #fff;
   font-size: 24px;
-  background-color: #ef233c;
-  padding: 12px 16px;
+  background-color: var(--primary-color);
+  padding: 8px 16px;
   transition: 0.3s;
+  border-radius: 16px;
 }
 
 .back-main-page:hover {
@@ -448,18 +453,93 @@ textarea {
   background-color: transparent;
 }
 
-#footer {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    z-index: 999;
-    margin: 32px;
+.container-sayings {
+  position: relative;
 }
 
+.sayings {
+  display: flex;
+  gap: 24px;
+  overflow-x: hidden;
+}
+
+.saying.active {
+  display: flex;
+}
+
+.saying.active span {
+  animation: graduallyDarken 0.5s linear;
+}
+
+@keyframes graduallyDarken {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.saying {
+  display: none;
+  background-color: rgba(21, 21, 21);
+  border-radius: 16px;
+  align-items: center;
+  padding: 16px 46px;
+  /* width: calc(25% - 18px); */
+  width: calc(100%);
+  flex-shrink: 0;
+  min-height: 300px;
+}
+
+.saying-left,
+.saying-right {
+  border: 1px solid transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 999;
+  background-color: var(--primary-color);
+}
+
+.saying-left:hover,
+.saying-right:hover {
+  border-color: #fff;
+  background-color: transparent;
+}
+
+.saying-left {
+  left: -18px;
+}
+
+.saying-right {
+  right: -18px;
+}
+
+.saying span {
+  flex: 1;
+  font-size: 32px;
+  text-align: center;
+}
+
+#footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 999;
+  margin: 32px;
+}
 
 #footer span a {
-    display: inline-block;
-    margin-left: 4px;
+  display: inline-block;
+  margin-left: 4px;
 }

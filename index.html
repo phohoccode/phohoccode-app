@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PHOHOCCODE</title>
+    <title>Trang chính | phohoccode</title>
     <link rel="icon" href="./assets/img/logo.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
@@ -35,6 +35,9 @@
           </li>
 
           <li>
+            <a href="#about">Châm ngôn</a>
+          </li>
+          <li>
             <a href="#contact">Liên hệ</a>
           </li>
         </ul>
@@ -60,30 +63,48 @@
       <div class="content">
         <section id="home">
           <header class="hero-section">
-            <span>Chào mừng bạn đến với trang web quản lý dự án của tôi</span>
+            <span
+              >Chào mừng bạn đến với trang web quản lý dự án cá nhân của tôi
+              !</span
+            >
             <h1>Tôi tên<span>Nhan Quốc Việt</span></h1>
             <p>
-              Là sinh viên Công nghệ thông tin tại trường Đại học Sư Phạm Kỹ
-              Thuật Vĩnh Long
+              Là sinh viên ngành Công nghệ thông tin tại trường Đại học Sư Phạm
+              Kỹ Thuật Vĩnh Long. Tôi luôn tìm kiếm những cơ hội để thử thách và
+              phát triển bản thân. Sự đam mê với lập trình đã giúp tôi tham gia
+              vào nhiều dự án đa dạng, từ đó nâng cao kỹ năng và kiến thức của
+              mình. Hiện tại, tôi đang hướng đến mục tiêu trở thành một chuyên
+              gia trong lĩnh vực phát triển phần mềm.
             </p>
           </header>
         </section>
 
-        <section id="about"></section>
         <section id="project">
           <h3 class="title">Danh sách dự án</h3>
           <div class="projects"></div>
+        </section>
+        <section id="about">
+          <h3 class="title">Câu nói truyền cảm hứng</h3>
+          <div class="container-sayings">
+            <button class="saying-left">
+              <i class="fa-light fa-chevron-left"></i>
+            </button>
+            <div class="sayings"></div>
+            <button class="saying-right">
+              <i class="fa-light fa-chevron-right"></i>
+            </button>
+          </div>
         </section>
         <section id="contact">
           <h3 class="title">Liên hệ</h3>
           <form action="">
             <div class="form-inputs">
               <div class="form-input">
-                <label for="">Fist Name</label>
-                <input autofocus required type="text" />
+                <label for="">Tên</label>
+                <input required type="text" />
               </div>
               <div class="form-input">
-                <label for="">Last Name</label>
+                <label for="">Họ</label>
                 <input type="text" required />
               </div>
             </div>
@@ -92,8 +113,8 @@
               <input type="email" required />
             </div>
             <div class="form-input">
-              <label for="">Leave us a message...</label>
-              <textarea></textarea>
+              <label for="">Lời nhắn</label>
+              <textarea required placeholder="Hãy phản hồi một cách tích cực nhé!"></textarea>
             </div>
 
             <div class="submit">
@@ -101,17 +122,17 @@
             </div>
           </form>
         </section>
+      </div>
+      <footer id="footer">
+        <span
+          >Dự án thực hiện bởi<a
+            target="_blank"
+            href="https://www.facebook.com/PHODEV.2004"
+            >Phở</a
+          >
+        </span>
+      </footer>
     </div>
-    <footer id="footer">
-      <span
-        >Dự án thực hiện bởi<a
-          target="_blank"
-          href="https://www.facebook.com/PHODEV.2004"
-          >Phở</a
-        >
-      </span>
-    </footer>
-</div>
 
     <div class="mobile-menu-items">
       <div class="close-button">
@@ -138,6 +159,10 @@
 
         <li>
           <a href="#project">Dự án</a>
+        </li>
+
+        <li class="active">
+          <a href="#about">Châm ngôn</a>
         </li>
 
         <li>

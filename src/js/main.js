@@ -1,24 +1,48 @@
 import projects_data from "./data.js"
+import { sayings_data } from "./data.js"
 
 const root = (() => {
     const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
     const projects = $('.projects')
-    const main = $('.main-container')
-    const menuButton = $('.menu-button')
-    const closeButton = $('.close-button')
-    const menuItem = $('.menu-items')
-    const menuItemMobile = $('.mobile-menu-items .menu-items')
-    window.menuItemMobile = menuItemMobile
-    
+    const sayings = $('.sayings')
+
     return {
         handleEvent() {
+            const main = $('.main-container')
+            const menuButton = $('.menu-button')
+            const closeButton = $('.close-button')
+            const menuItem = $('.menu-items')
+            const menuItemMobile = $('.mobile-menu-items .menu-items')
+            const saying = $$('.saying')
+            const sayingLeft = $('.saying-left')
+            const sayingRight = $('.saying-right')
+
+            let currentSaying = 0
+            saying[currentSaying].classList.add('active')
+
+            sayingLeft.addEventListener('click', () => {
+                currentSaying--
+                if (currentSaying < 0) {
+                    currentSaying = saying.length - 1
+                }
+                this.changeSaying(saying, currentSaying)
+            })
+
+            sayingRight.addEventListener('click', () => {
+                currentSaying++
+                if (currentSaying > saying.length - 1) {
+                    currentSaying = 0
+                }
+                this.changeSaying(saying, currentSaying)
+            })
+
+
             projects.addEventListener('click', (e) => {
-                e.preventDefault()
                 const seeButton = e.target.closest('.see-now')
                 if (seeButton) {
                     const currentId = Number(seeButton.dataset.index)
-                    const result = projects_data.filter(project => project.id === currentId)
-                    this.renderProjectsDetail(result)
+                    localStorage.setItem('idProject', JSON.stringify(currentId))
                 }
             })
 
@@ -29,7 +53,7 @@ const root = (() => {
             closeButton.addEventListener('click', () => {
                 main.classList.remove('active')
             })
-            
+
             menuItem.addEventListener('click', (e) => {
                 const item = e.target.closest('.menu-items li')
                 if (item) {
@@ -46,52 +70,16 @@ const root = (() => {
                 }
             })
         },
-        renderProjectsDetail(data) {
-            const htmls = data.map(childData => `
-                <video autoplay loop muted>
-                    <source src="./assets/video/bg.mp4" type="video/mp4" />
-                </video>
-                <div class="bg-overlay"></div>
-                <nav>
-                    <div class="logo">
-                        <a href="./index.html">PHOHOCCODE</a>
-                    </div>
-                    <a href="./index.html" class="back-main-page">
-                        <i class="fa-light fa-xmark"></i>
-                    </a>
-                </nav>
-                <div class="project-detail">
-                    <h3 class="title">Hình ảnh dự án</h3>
-                    <div class="images">
-                        ${childData.path_images.map((image) => `
-                            <div class="image">
-                                <img src="${image}" alt="">
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-name">Tên dự án: ${childData.name}</h3>
-                        <span class="project-language">Ngôn ngữ sử dụng: ${childData.language}</span>
-                        <ul class="project-func">
-                            Chức năng:
-                            ${childData.func.map(childFunc => `
-                                <li>${childFunc}</li>
-                            `).join('')}
-                        </ul>
-                        <p class="project-des">Mô tả dự án: ${childData.des}</p>
-                        <div class"project-link">Link trang web: <a target="blank" href="${childData.link}">${childData.link}</a></div>
-                        <a target="blank" href="${childData.link_source_code}" class="view-soucre">Xem mã nguồn dự án</a>
-                    </div>
-                </div>
-            `).join('')
-            main.innerHTML = htmls
+        changeSaying(elements, index) {
+            elements.forEach(element => element.classList.remove('active'))
+            elements[index].classList.add('active')
         },
         renderProjects() {
-            const htmls = projects_data.map((childData, index) => `
+            const htmls = projects_data.map((project, index) => `
                 <div class="project">
                     <div class="project-background">
                         <figure>
-                            <img src="${childData.background}" alt="">
+                            <img src="${project.background}" alt="">
                         </figure>
                         <a data-index="${index}" href="./project-detail.html" class="see-now">Xem dự án</a>
                     </div>
@@ -99,8 +87,17 @@ const root = (() => {
             `).join('')
             projects.innerHTML = htmls
         },
+        renderSayings() {
+            const htmls = sayings_data.map((saying, index) => `
+            <div class="saying" data-index=${index}>
+                <span>${saying}</span>
+            </div>
+            `).join('')
+            sayings.innerHTML = htmls
+        },
 
         start() {
+            this.renderSayings()
             this.renderProjects()
             this.handleEvent()
         }
