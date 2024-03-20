@@ -17,6 +17,7 @@ const root = (() => {
             const saying = $$('.saying')
             const sayingLeft = $('.saying-left')
             const sayingRight = $('.saying-right')
+            const submitForm = $('.submit')
 
             let currentSaying = 0
             saying[currentSaying].classList.add('active')
@@ -69,10 +70,33 @@ const root = (() => {
                     main.classList.remove('active')
                 }
             })
+
+            submitForm.addEventListener('click', (e) => {
+                const fullName = $('.full-name').value
+                const email = $('.email').value
+                const message = $('.message').value
+                e.preventDefault()
+
+                if (fullName !== '' && this.isEmail(email) && message !== '') {
+                    console.log('done')
+                    window.location.href = `mailto:qviet092@gmail.com?subject=${fullName}&body=` + encodeURIComponent(message)
+                    fullName = ''
+                    email = ''
+                    message = ''
+                } else {
+                    console.log('error')
+                    alert(`Đã xãy ra lỗi khi gửi!\nNguyên nhân có thể do:\n1. Họ và tên đang trống\n2. Email chưa đúng định dạng\n3. Lời nhắn đang trống`)
+                }
+            })
+
         },
         changeSaying(elements, index) {
             elements.forEach(element => element.classList.remove('active'))
             elements[index].classList.add('active')
+        },
+        isEmail(email) {
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            return pattern.test(email)
         },
         renderProjects() {
             const htmls = projects_data.map((project, index) => `

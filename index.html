@@ -35,9 +35,6 @@
           </li>
 
           <li>
-            <a href="#about">Châm ngôn</a>
-          </li>
-          <li>
             <a href="#contact">Liên hệ</a>
           </li>
         </ul>
@@ -77,14 +74,6 @@
               gia trong lĩnh vực phát triển phần mềm.
             </p>
           </header>
-        </section>
-
-        <section id="project">
-          <h3 class="title">Danh sách dự án</h3>
-          <div class="projects"></div>
-        </section>
-        <section id="about">
-          <h3 class="title">Câu nói truyền cảm hứng</h3>
           <div class="container-sayings">
             <button class="saying-left">
               <i class="fa-light fa-chevron-left"></i>
@@ -95,26 +84,26 @@
             </button>
           </div>
         </section>
+
+        <section id="project">
+          <h3 class="title">Danh sách dự án</h3>
+          <div class="projects"></div>
+        </section>
+
         <section id="contact">
-          <h3 class="title">Liên hệ</h3>
+          <h3 class="title">Liên hệ với tôi</h3>
           <form action="">
-            <div class="form-inputs">
               <div class="form-input">
-                <label for="">Tên</label>
-                <input required type="text" />
+                <label for="">Họ và tên</label>
+                <input class="full-name" type="text" />
               </div>
-              <div class="form-input">
-                <label for="">Họ</label>
-                <input type="text" required />
-              </div>
-            </div>
             <div class="form-input">
               <label for="">Email</label>
-              <input type="email" required />
+              <input class="email" autocomplete="email" type="email" />
             </div>
             <div class="form-input">
               <label for="">Lời nhắn</label>
-              <textarea required placeholder="Hãy phản hồi một cách tích cực nhé!"></textarea>
+              <textarea class="message" placeholder="Hãy phản hồi một cách tích cực nhé!"></textarea>
             </div>
 
             <div class="submit">
@@ -159,10 +148,6 @@
 
         <li>
           <a href="#project">Dự án</a>
-        </li>
-
-        <li class="active">
-          <a href="#about">Châm ngôn</a>
         </li>
 
         <li>

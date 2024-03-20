@@ -7,9 +7,12 @@
   section {
     margin: 80px 22px;
   }
+  .projects {
+    gap: 22px;
+  }
   .project,
   .image {
-    width: calc(33.3333% - 16px);
+    width: calc(33.3333% - 15px);
   }
 
   .main-container .hero-section > span {
@@ -19,9 +22,16 @@
     font-size: 48px;
   }
   .back-main-page {
-    right: 22px;
-    top: 22px;
+    right: 16px;
+    top: 16px;
     padding: 8px 16px;
+  }
+  .image-detail {
+      padding: 0 22px;
+  }
+  .show-image {
+    width: calc(100% - 200px);
+    height: 400px;
   }
 }
 
@@ -34,9 +44,12 @@
   section {
     margin: 80px 16px;
   }
+  .projects {
+    gap: 16px;
+  }
   .project,
   .image {
-    width: calc(50% - 12px);
+    width: calc(50% - 8px);
   }
 
   .main-container .hero-section > span {
@@ -47,11 +60,36 @@
   }
   .back-main-page {
     right: 16px;
-    top: 16px;
+    top: 12px;
     padding: 6px 14px;
   }
-  .form-inputs {
-    flex-direction: column;
+  .sayings {
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+  .saying {
+    display: flex;
+  }
+  .saying-left,
+  .saying-right {
+    display: none;
+  }
+  .image-detail {
+    padding: 0 16px;
+  }
+  .show-image {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    overflow-x: auto;
+    height: 300px;
+    padding-bottom: 12px;
+  }
+  .show-image img {
+    display: block;
+  }
+  .left, .right {
+    display: none;
   }
 }
 
@@ -86,7 +124,6 @@
   .main-container.active {
     pointer-events: none;
     transform: translateX(-190px);
-    /* transform: translateX(-190px) rotateZ(-4deg) scale(1.1); */
   }
 
   .main-container.active nav .menu-button {
@@ -101,7 +138,7 @@
     width: 190px;
     right: 0;
     top: 0;
-    background: #131212;
+    background-color: rgba(21,21,21);
   }
 
   .mobile-menu-items ul {
@@ -141,17 +178,15 @@
   .project-info {
     font-size: 16px;
   }
-  .form-inputs {
-    flex-direction: column;
-  }
   .back-main-page {
-    right: 12px;
-    top: 12px;
+    right: 6px;
+    top: 6px;
     padding: 4px 12px;
   }
   .sayings {
     overflow-x: auto;
     padding-bottom: 12px;
+    gap: 12px;
   }
   .saying {
     display: flex;
@@ -162,6 +197,23 @@
   }
   .saying-left,
   .saying-right {
+    display: none;
+  }
+  .image-detail {
+    padding: 0 16px;
+  }
+  .show-image {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    overflow-x: auto;
+    height: 300px;
+    padding-bottom: 12px;
+  }
+  .show-image img {
+    display: block;
+  }
+  .left, .right {
     display: none;
   }
 }
