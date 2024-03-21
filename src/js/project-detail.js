@@ -24,7 +24,7 @@ const project_detail = (() => {
                         `).join('')}
                         </ul>
                     <p class="project-des">Mô tả dự án: ${project.des}</p>
-                    <div class"project-link">Link trang web: <a target="blank" href="${project.link}">${project.link}</a></div>
+                    <div class="project-link">Link trang web: <a target="blank" href="${project.link}">${project.link}</a></div>
                     <a target="blank" href="${project.link_source_code}" class="view-soucre">Xem mã nguồn dự án</a>
                 </div>
                 `).join('')

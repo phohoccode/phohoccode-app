@@ -169,11 +169,27 @@
   .main-container .hero-section h1 {
     font-size: 32px;
   }
-  .project,
   .submit button,
-  .image,
   .view-soucre {
     width: 100%;
+  }
+  .saying {
+    min-height: 200px;
+  }
+  .projects,
+  .images {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    gap: 12px;
+  }
+  .project,
+  .image {
+    width: 70vw;
+    flex-shrink: 0;
+  }
+  .project-background figure {
+    height: 160px;
   }
   .project-info {
     font-size: 16px;

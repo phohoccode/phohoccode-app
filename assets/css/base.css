@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #8338ec;
+}
+
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+    background: #000;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  z-index: 2;
+  background: #000;
+  transition: all 400ms ease;
+  position: relative;
+  user-select: none;
+}
+
+.main-container video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.main-container .bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #000;
+  opacity: 0.8;
+}
+
+.back-main-page {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+.back-main-page:hover {
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes graduallyDarken {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
